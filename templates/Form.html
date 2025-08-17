@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor Detection System</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo"> <i class="fa-solid fa-brain"></i> </a>
+    
+        <nav class="navbar">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('Form') }}">Prediction</a>
+            <!--<a href="#">About</a>-->
+        </nav>
+    
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <!-- <div id="search-btn" class="fas fa-search"></div> -->
+            <!-- <div id="cart-btn" class="fas fa-shopping-cart"></div> -->
+            <div id="login-btn" class="fas fa-user"></div>
+        </div>
+    
+    
+    </header>
+    <div class="form-wrapper">
+        <div class="form-container">
+            <h1 class="form-title">Brain MRI Scan Upload</h1>
+            <form action="{{ url_for('Form') }}" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="file">Choose a MRI image:</label>
+                    <input type="file" name="image" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="pain">Do you experience pain?</label>
+                    <select name="pain">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="history">Is there any known Tumor history?</label>
+                    <select name="history">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="pain_level">What is your pain level?</label>
+                    <select name="pain_level">
+                        <option value="No Pain">No Pain</option>
+                        <option value="Mild">Mild</option>
+                        <option value="Moderate">Moderate</option>
+                        <option value="Severe">Severe</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="pain_duration">Duration of pain:</label>
+                    <select name="pain_duration">
+                        <option value="No Pain">No Pain</option>
+                        <option value="Less than a week">Less than a week</option>
+                        <option value="1-4 weeks">1-4 weeks</option>
+                        <option value="More than a month">More than a month</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="symptoms">Other symptoms:</label>
+                    <select name="symptoms">
+                        <option value="Persistent headaches">Persistent headaches</option>
+                        <option value="Vision problems">Vision problems</option>
+                        <option value="Seizures">Seizures</option>
+                        <option value="None">None</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="family_history">Family history of Tumor problems?</label>
+                    <select name="family_history">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                        <option value="Unknown">Unknown</option>
+                    </select>
+                </div>
+    
+                <div class="form-submit">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+      
+</body>
+</html>

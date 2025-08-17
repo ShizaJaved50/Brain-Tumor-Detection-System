@@ -1,0 +1,209 @@
+body {
+    margin: 0;
+    min-height: 100vh; /* Allow body to grow if needed */
+    background: linear-gradient(135deg, #FF6F61, #6F86D6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align content to top, not center */
+    overflow-x: hidden; /* Only hide horizontal overflow */
+    padding: 20px; /* Optional: space around content */
+}
+.header {
+    text-align: center;
+    color: #2C3E50;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    font-family: 'Roboto', sans-serif;
+}
+.report-card {
+    background: #ffffff;
+    border: 2px solid #00796B;
+    border-radius: 20px;
+    padding: 0.3rem; /* Increased padding for more space */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 80%; /* Responsive width */
+    max-width: 1000px; /* Larger max width */
+    height: auto;
+    overflow-y: auto; /* Allow scrolling within the card */
+    max-height: 60vh; /* Limit the height of the card */
+    transition: width 0.3s ease; /* Smooth transition */
+}
+.section-title {
+    color: #2C3E50;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    /* border-bottom: 2px solid #00796B; */
+    padding-bottom: 0.5rem;
+    font-size: 1.8rem; /* Slightly larger title font */
+}
+.predicted-type {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+    color: #00796B;
+    text-align: center;
+    margin: 0.5rem 0;
+    font-weight: bold;
+}
+.section-content {
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+    margin: 0.5rem 0;
+    line-height: 1.6; /* Improved line height for readability */
+}
+.disclaimer {
+    margin-top: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+    color: #333;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+.back-button {
+    background-color: #00796B;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-top: 1rem;
+    display: inline-block;
+}
+.back-button:hover {
+    background-color: #004D40;
+    transform: scale(1.05);
+}
+/* Register Form Styles */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.register-form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    animation: fadeIn 0.5s ease;
+}
+
+.register-form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 24px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #4a90e2;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+.register-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.register-btn:hover {
+    background-color: #3a7bc8;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+.login-link a {
+    color: #4a90e2;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .register-form {
+        padding: 20px;
+    }
+    
+    .register-form h2 {
+        font-size: 20px;
+    }
+    
+    .form-group input {
+        padding: 10px 12px;
+    }
+    
+    .register-btn {
+        padding: 10px;
+    }
+}
+
+.graph-container {
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    padding: 15px;
+    max-width: 600px;
+}
+.btn-download {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}

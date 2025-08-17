@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnosis Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Styles.css') }}">
+</head>
+<body>
+    <h1 class="header">Diagnosis Results</h1>
+
+    <div class="report-card">
+        <!-- <h2 class="section-title">Predicted Kidney Type:</h2>
+        <p class="predicted-type">{{ kidney_type }}</p> -->
+         
+        <h2 class="section-title">Detailed Analysis Report: {{ result.predicted_class }}</h2>
+         <!--<div class="section-content"><div class="confidence-level">
+            <strong>Confidence:</strong> {{ result.confidence }}
+        </div></div> -->
+    </div>
+
+    <!-- Confidence Graph -->
+    <div class="graph-box">
+        <h4 style="text-align: center;">Prediction Confidence</h4>
+<div style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+    <img src="data:image/png;base64,{{ graph_image }}" alt="Prediction Confidence Graph" style="max-width: 150px; height: auto; border: 1px solid #ccc; border-radius: 8px;">
+</div>
+    </div>
+    <!-- Graph Display -->
+<!--<div class="graph-box">
+    <h3>Prediction Confidence</h3>
+    <img src="data:image/png;base64,{{ graph_image }}?t={{ timestamp }}" 
+         alt="Confidence Graph"
+         style="width: 100%; max-width: 500px;">
+</div>-->
+    
+
+    <!-- Patient Details -->
+    <div class="patient-info">
+        <h3>📝 Patient Symptoms</h3>
+        <p><strong>Pain Level:</strong> {{ result.pain_level }}</p>
+        <p><strong>History:</strong> {{ result.history }}</p>
+        <p><strong>Symptoms:</strong> {{ result.symptoms }}</p>
+    </div>
+
+    <!-- PDF Download Button -->
+    {% if session['username'] %}
+    <a href="{{ url_for('download_pdf') }}">Download PDF Report</a>
+{% else %}
+    <p style="color:red;">Please <a href="{{ url_for('index') }}">login</a> to download the result.</p>
+{% endif %}
+    
+
+    <div class="disclaimer">
+        <p>Note: This is an AI-assisted analysis. Please consult with a healthcare professional for accurate medical diagnosis and treatment.</p>
+    </div>
+    <a href="{{ url_for('Form') }}">Try Another Image</a>
+
+    <div>
+        <a href="/" class="back-button">Go back</a>
+    </div>
+</body>
+</html>
